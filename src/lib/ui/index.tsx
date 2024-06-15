@@ -5,6 +5,8 @@ import Input from "./input";
 import Spinner from "./spinner";
 import Card from "./card"
 import Avatar from "./avatar"
+import Skeleton from "./skeleton"
+import Flex from './flex'
 
 export { 
     Badge,
@@ -13,5 +15,7 @@ export {
     Spinner,
     Button,
     Toggle,
-    Avatar
+    Avatar,
+    Skeleton,
+    Flex
 };
