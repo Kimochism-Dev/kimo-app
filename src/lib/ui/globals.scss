@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(192, 192, 192, 0.8);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+// all
+* {
+  font-family: "Poppins", sans-serif;
+  --color-white: white;
+  --color-black: black;
+  --color-primary: white;
+  --color-secondary: black;
+  --color-tertiary: white;
+}
+
+// displays
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+// gap
+.gap-1 {
+  gap: 10px;
+}
+
+// button
+.btn {
+  padding: 8px 14px;
+  border: 1px solid var(--color-black);
+  background-color: var(--color-white);
+  transition: 0.3s;
+  font-weight: 400;
+
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-black);
+    cursor: pointer;
+  }
+}
+
+// input checkbox
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+}
+
+// toggle
+.toggle {
+  height: 32px;
+  width: 52px;
+  border-radius: 16px;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  border: 2px solid var(--color-black);
+  background-color: var(--color-white);
+  transition: all 0.2s ease;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid black;
+    transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
+  }
+  &:checked {
+    background: var(--color-black);
+    border-color: var(--color-black);
+    &:after {
+      transform: translatex(20px);
+    }
+  }
+}
+
+// input 
+input[type="text"] {
+  padding: 8px 14px;
+  border: 1px solid var(--color-black);
+  background-color: var(--color-white);
+  outline: none;
+}
+
+// badge
+.badge {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 50px;
+  border: 1px solid var(--color-black);
+  cursor: default;
+}
+
+// spinner
+$offset: 187;
+$duration: 1.4s;
+
+.spinner {
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.spinner-path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash $duration ease-in-out infinite,
+    colors ($duration * 4) ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% {
+    stroke: var(--color-black);
+  }
+  100% {
+    stroke: var(--color-black);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: $offset;
+  }
+  50% {
+    stroke-dashoffset: $offset/4;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
+  }
+}
+
+// card
+.card {
+  border: 1px solid var(--color-black);
+  background-color: var(--color-white);
+
+  .card-container {
+    padding: 12px;
+    .card-title {
+      h3 {
+        margin: 0px;
+        margin-bottom: 12px;
+      }
+    }
+    .card-body {
+      flex-direction: column;
+      display: flex;
+    }
+  }
+  .card-footer {
+    padding: 12px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+}
+
+// avatar 
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+// variants
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  &:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+}
+
+.secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+  }
+}
+
+.tertiary {
+  background-color: var(--color-tertiary);
+}
