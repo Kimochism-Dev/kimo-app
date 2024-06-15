@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 
 interface IFlex {
   children?: ReactNode;
+  variant?: string;
   wrap?: boolean;
   full?: boolean;
   column?: boolean;
@@ -21,8 +22,7 @@ interface IFlex {
 
 const Flex = ({
   children,
-  wrap = true,
-  full = false,
+  variant,
   column,
   columnReverse,
   row,
@@ -33,7 +33,9 @@ const Flex = ({
   alignCenter,
   alignEnd,
   alignStart,
-  outline = true,
+  outline = false,
+  full = false,
+  wrap = true,
   padding = "p-1",
   gap = "g-1",
 }: IFlex) => {
@@ -54,6 +56,7 @@ const Flex = ({
     ${outline ? "outline" : ""} 
     ${full ? "full" : ""} 
     ${wrap ? "wrap" : ""} 
+    ${variant} 
     ${padding} 
     ${gap} 
     `}

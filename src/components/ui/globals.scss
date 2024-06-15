@@ -30,6 +30,12 @@
   --color-tertiary: white;
 }
 
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
 // displays
 .flex {
   display: flex;
@@ -102,6 +108,25 @@
 
 .p-1 {
   padding: 10px;
+}
+
+.p-2 {
+  padding: 20px;
+}
+
+.p-3 {
+  padding: 30px;
+}
+
+// text
+.text {}
+
+.link {
+  text-decoration: none;
+  color: var(--color-primary);
+  .text {
+    cursor: pointer;
+  }
 }
 
 // button
@@ -272,8 +297,8 @@ $duration: 1.4s;
   gap: 10px;
   display: flex;
 
-  .skeleton-side-l {
-  }
+  // .skeleton-side-l {
+  // }
 
   .skeleton-side-r {
     gap: 14px;
@@ -326,6 +351,22 @@ $duration: 1.4s;
   100% {
     transform: translateX(100%);
   }
+}
+
+// bg variants
+
+.bg-primary {
+  background-color: var(--color-primary);
+  color: var(--color-black);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.bg-tertiary {
+  background-color: var(--color-tertiary);
 }
 
 // variants

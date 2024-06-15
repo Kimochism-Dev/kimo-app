@@ -7,6 +7,7 @@ import Card from "./card"
 import Avatar from "./avatar"
 import Skeleton from "./skeleton"
 import Flex from './flex'
+import Text from "./text";
 
 export { 
     Badge,
@@ -17,5 +18,6 @@ export {
     Toggle,
     Avatar,
     Skeleton,
+    Text,
     Flex
 };
